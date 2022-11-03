@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}S'flix{% endblock %}
+{% block body%}
+<div class="container">
+    <h1>voir tous les films disponibles</h1>
+    <p>Notre plateform vous offre differents films à visionner chez vous!</p>
+</div>
+<div class="container">
+<div class="row flex">
+        
+    {% for film in films %}
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="{{asset('uploads/'~film.affiche)}}" style="width: 100px">
+                <h5 class="card-title">
+                    
+                    <a href="{{path('film',{id:film.id})}}">{{ film.titre}}</a>
+                </h5>
+                <p class="card-text">{{film.resume}}</p>
+    <div class="text-primary" style="font-weight:bold;font-size:20px"><p>{{film.genre.nom}}</p></div>
+            </div>
+        </div>
+            </div>
+    {% endfor %}
+        </div>
+    </div>
+    {%endblock%}

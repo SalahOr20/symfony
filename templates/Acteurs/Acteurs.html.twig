@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Panel Admin{% endblock %}
+
+
+
+{% block body %}
+
+<div class="continaire-mt-4">
+    <h1>Gérer les acteurs</h1>
+    <a href="{{path("acteurcr")}}" class="btn btn-secondary">Ajouter un acteur</a>
+{%for message in app.flashes('succes')%}
+ <div class="alert alert-success">
+    {{message}}
+ </div>
+{%endfor%}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>nom</th>
+                <th>Actions</th>
+              
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for acteur in acteurs %}
+            <tr>
+                <td>{{acteur.id}}</td>
+                <td><a href="{{path('acteur',{id:acteur.id})}}">{{ acteur.nom}}</a></td>
+             
+                <td><a href="{{path("acteured",{id:acteur.id})}}" class="btn btn-secondary">Modifier</a></td>
+        
+                <td><a href="{{path("acteursup",{id:acteur.id})}}" class="btn btn-secondary">Supprimer</a></td>
+            </tr>
+            
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+ 
+
+{% endblock %}

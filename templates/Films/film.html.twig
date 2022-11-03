@@ -1,0 +1,59 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}Property{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="container">
+    
+
+
+
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Le film séléctionné</h2>
+        <img src="{{asset('uploads/'~film.affiche)}}" style="width: 200px">
+        <table class="table table-striped">
+<tr>
+    <td>Titre de film</td>
+    <td>{{film.titre}}</td>
+   
+</tr>
+<tr>
+    <td>Résumé du film</td>
+    <td>{{film.resume}}</td>
+   
+</tr>
+<tr>
+    <td>Année de sortie</td>
+    <td>{{film.anneeDeSortie|date("d/m/Y")}}</td>
+   
+</tr>
+<tr>
+    <td>Genre du film</td>
+    <td><a href="{{path("listg",{id:film.id})}}">{{film.genre.nom}}</td>
+   
+</tr>
+<tr>
+    <td>Acteurs du film</td>
+    {% for acteur in film.acteurs %}
+   
+    <td>{{acteur.nom}}
+    {%endfor%}
+  
+
+</tr>
+
+
+</table>
+    </div>
+</div>
+
+
+{% endblock %}
+

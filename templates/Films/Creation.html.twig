@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Creer  un film{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container">
+    <h1>Creer un film</h1>
+    {{form_start(form)}}
+    <div class="row">
+        <div class="col-md-4">{{form_row(form.titre)}}</div>
+        <div class="col-md-4">{{form_row(form.resume)}}</div>
+    
+    </div>
+    <div class="row">
+        <div class="col-md-2">{{form_row(form.AnneeDeSortie)}}</div>
+       
+        <div class="col-md-2">{{form_row(form.Affiche)}}</div>
+        <div class="col-md-2">{{form_row(form.Genre)}}</div>
+    </div>
+    <div class="row">
+    <div class="col-md-2">{{form_row(form.acteurs)}}</div>
+    </div>
+{{form_widget(form)}}
+{{form_end(form)}}
+ 
+</div>
+
+
+
+
+{% endblock %}

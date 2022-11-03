@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modifier un genre{% endblock %}
+
+
+
+{% block body %}
+<h1>Modifier ce genre</h1>
+{{form_start(form)}}
+<div class="row">
+    <div class="col-md-4">{{form_row(form.nom)}}</div>
+  
+</div>
+
+
+{{form_widget(form)}}
+{{form_end(form)}}
+ 
+
+{% endblock %}

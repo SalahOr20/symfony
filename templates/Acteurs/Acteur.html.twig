@@ -1,0 +1,49 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}Property{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="container">
+    
+<h2>Le bien séléctionné</h2>
+<img src="{{asset('uploads/'~acteur.photo)}}" style="width: 200px">
+<div class="row">
+    <div class="col-md-8">
+        <h2>Caractéristique</h2>
+        <table class="table table-striped">
+<tr>
+    <td>Nom de l'auteur</td>
+    <td>{{acteur.nom}}</td>
+   
+</tr>
+<tr>
+    <td>Prenom</td>
+    <td>{{acteur.prenom}}</td>
+   
+</tr>
+<tr>
+    <td>Date de naissance</td>
+    <td>{{acteur.dateDeNaissance|date("d/m/Y")}}</td>
+   
+</tr>
+<tr>
+    <td>Date de mort</td>
+    {%if acteur.dateDeMort is not null%}
+    <td>{{acteur.dateDeMort|date("d/m/Y")}}</td>
+    {% endif %}
+   
+</tr>
+
+
+</table>
+    </div>
+</div>
+
+
+{% endblock %}
+

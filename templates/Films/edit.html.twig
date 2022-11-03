@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modifier  un film{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container">
+    <h1>Modifier ce film</h1>
+    {{form_start(form)}}
+    <div class="row">
+        <div class="col-md-4">{{form_row(form.titre)}}</div>
+        <div class="col-md-4">{{form_row(form.resume)}}</div>
+    
+    </div>
+    <div class="row">
+        <div class="col-md-2">{{form_row(form.anneeDeSortie)}}</div>
+        <div class="col-md-2">{{form_row(form.acteurs)}}</div>
+        <div class="col-md-2">{{form_row(form.affiche)}}</div>
+      
+    </div>
+    
+{{form_widget(form)}}
+{{form_end(form)}}
+ 
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Panel Admin{% endblock %}
+
+
+
+{% block body %}
+
+<div class="continaire-mt-4">
+    <h1>Gérer les genres</h1>
+    <a href="{{path("genreadd")}}" class="btn btn-secondary">Ajouter un genre</a>
+{%for message in app.flashes('succes')%}
+ <div class="alert alert-success">
+    {{message}}
+ </div>
+{%endfor%}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>nom</th>
+                <th>Actions</th>
+              
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for genre in genres %}
+            <tr>
+                <td>{{genre.id}}</td>
+                <td>{{genre.nom}}</td>
+             
+                <td><a href="{{path("genreedit",{id:genre.id})}}" class="btn btn-secondary">Modifier</a></td>
+        
+                <td><a href="{{path("genresup",{id:genre.id})}}" class="btn btn-secondary">Supprimer</a></td>
+            </tr>
+            
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+ 
+
+{% endblock %}

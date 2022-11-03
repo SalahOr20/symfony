@@ -1,0 +1,36 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}Property{% endblock %}
+
+
+
+{% block body %}
+
+
+ 
+
+<div class="container">
+    <div class="row flex">
+            
+        {% for recherche in recherches %}
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{asset('uploads/'~recherche.affiche)}}" style="width: 100px">
+                    <h5 class="card-title">
+                        
+                        <a href="{{path('film',{id:recherche.id})}}">{{ recherche.titre}}</a>
+                    </h5>
+                    <p class="card-text">{{recherche.resume}}</p>
+      
+                </div>
+            </div>
+                </div>
+        {% endfor %}
+            </div>
+        </div>
+
+
+{% endblock %}
+
