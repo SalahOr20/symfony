@@ -43,7 +43,7 @@
     <td>Acteurs du film</td>
     {% for acteur in film.acteurs %}
    
-    <td>{{acteur.nom}}
+    <td><a href="{{path("acteur",{id:acteur.id})}}">{{acteur.nom}}</td>
     {%endfor%}
   
 

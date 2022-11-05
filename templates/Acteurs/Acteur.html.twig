@@ -38,6 +38,16 @@
     {% endif %}
    
 </tr>
+<tr>
+    <td> Films </td>
+    {% for film in acteur.films %}
+
+    <td><a href="{{path("film",{id:film.id})}}">{{film.titre}}</td>
+    {%endfor%}
+
+
+</tr>
+
 
 
 </table>

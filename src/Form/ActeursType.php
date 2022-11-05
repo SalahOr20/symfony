@@ -29,7 +29,8 @@ class ActeursType extends AbstractType
           
             ->add('photo',FileType::class,[
 
-                'data_class'=>null
+                'data_class'=>null,
+                'required'=>false
            
             ])
             
